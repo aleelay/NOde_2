@@ -14,6 +14,11 @@ hbs.registerHelper('uppercase', (text) => {
 	return text.toUpperCase();
 })
 
+app.use((req, res, next) => {
+	console.log(`LOG: ${req.method} ${}`);
+	next()
+})
+
 app.get('/', (req, res) => {
 	res.send('Home');
 })
